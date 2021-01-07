@@ -1,0 +1,100 @@
+%#!pdfpLaTeX
+%
+% 北村研究室用卒業論文・特別論文のTeXテンプレートファイル
+% 本ファイルは非公式であり，表紙とアブストに関しては下記で公開されているワードの
+% テンプレートを利用して作成したものが公式であるので，表紙とアブストはPDFにして
+% 差し替えること．
+% https://www.kagawa-nct.ac.jp/EE/local/index.html （学内限定アクセス）
+%
+% 2020年1月17日 北村大地作成
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 論文情報 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% テンプレート選択 %%%%%
+\documentclass[honka]{nitkcthesis}%卒論（本科5年）日本語用
+
+%%%%% タイトル %%%%%
+\title{\underline{全ユーザの来店履歴を用いた}\\\underline{飲食店推薦指標の提案}}
+%\titlewidth{}% タイトル幅 (指定するときは単位つきで)
+
+%%%%% 著者 %%%%%
+\author{name}
+\eauthor{name}% Copyright表示で使われる
+
+%%%%% 指導教員名 %%%%%
+\supervisor{name}% 1つ引数をとる (役職まで含めて書く)
+
+
+%%%%% 提出年月 %%%%%
+\date{令和3年 3月 31日}
+
+%%%%% \usepackage等のプリアンブル宣言（macros.texに記載） %%%%%
+\input{macros.tex}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol} % BibTeXのIEEEtranで同一著者の横線表示を防止
+
+\maketitle% タイトル生成
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 前文 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+%%%%% English title %%%%%
+\etitle{proposal of metrics for restaurant recommendation using all users' visitation history}
+
+%%%%% Abstract %%%%%
+\eabstract{
+English abstract goes here.
+}
+
+%%%%% 概要 %%%%%
+\abstract{
+日本語の概要をここに記述．
+}
+
+\keywords{A, B, C}
+
+\makeseparatedabstract
+%\makeabstract
+%%%%% 目次 %%%%%
+%\tableofcontents % ページ番号を削除しない目次
+%----- ページ番号を削除した目次 -----%
+{\makeatletter
+\let\ps@jpl@in\ps@empty
+\makeatother
+\pagestyle{empty}
+\tableofcontents
+\clearpage}
+%---------------------------------%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 本文 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\input{intro/intro.tex}
+
+\input{conclusion/conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 後付 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%%%%% 謝辞 %%%%%
+\input{acknowledgment/acknowledgment.tex}
+
+%%%%% 参考文献 %%%%%
+\begin{thebibliography}{99}
+  \bibitem{one}
+  お
+  \bibitem{two}
+  こ
+\end{thebibliography}
+
+
+%%%%% 発表文献一覧 %%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% 付録 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+%%%%% 付録A %%%%%
+% \input{appendix/appendix.tex} %TODO 付録つけることになったら書く
+
+\end{document}
