@@ -18,7 +18,7 @@
 ただし，高級店については，日常的に通うとは考えにくく，提案する指標では適切に評価できないことが明らかであるため，食べログ上での予算が一食5000円を超えるような飲食店はランキングから除外した．
 	\subsection{食べログの評価機能を用いた飲食店の良質さと知名度の調査}\label{exp:scrutiny}
 
-		上述の飲食店群に含まれる飲食店に対して食べログ上の点数と口コミの数とブックマークの数を調べ，表にまとめた．
+		上述の飲食店群に含まれる飲食店に対して食べログ上の点数と口コミの数とブックマークの数を調べた．
 
 	\subsection{アンケートによる良質さと知名度の調査}\label{exp:questionnaire}
 
@@ -69,12 +69,23 @@
 		の4段階で尋ねた．\\
 \section{結果}
 	\subsection{\ref{exp:scrutiny}の結果}
+	各指標の推薦結果上位10軒，及び食べログの点数ランキング上位10軒に対して，各指標値，食べログ上の点数，食べログ上の口コミ数，食べログ上のブックマーク数について調べ，表\ref{table:scrutiny:VN}，表\ref{table:scrutiny:addictivity}，表\ref{table:scrutiny:acceptability}，表\ref{table:scrutiny:rank}にまとめた．また，食べログ上の点数，食べログ上の口コミ数，食べログ上のブックマーク数について，推薦基準ごとに平均値を計算し，表\ref{table:scrutiny:average}にまとめた．
 	\input{./experiment/table/scrutiny/VN.tex}
 	\input{./experiment/table/scrutiny/addictivity.tex}
 	\input{./experiment/table/scrutiny/acceptability.tex}
 	\input{./experiment/table/scrutiny/rank.tex}
+	\input{./experiment/table/scrutiny/average.tex}
+	\newpage
+
 	\subsection{\ref{exp:questionnaire}の結果}
+	\ref{exp:questionnaire}に示した各指標の推薦結果上位10軒，及び食べログの点数ランキング上位10軒に対してのアンケート結果を，表\ref{table:questionnaire:VN}，表\ref{table:questionnaire:addictivity}，表\ref{table:questionnaire:acceptability}，表\ref{table:questionnaire:rank}にまとめた．
 	\input{./experiment/table/questionnaire/VN.tex}
 	\input{./experiment/table/questionnaire/addictivity.tex}
 	\input{./experiment/table/questionnaire/acceptability.tex}
 	\input{./experiment/table/questionnaire/rank.tex}
+\section{評価}
+推薦結果の比較，及びアンケート結果から提案する指標について評価を行う．\par
+食べログ上の点数の平均値の差から，提案指標による推薦では食べログの点数ランキングでは推薦されない飲食店を多く推薦できていることがわかる．\par
+また，アンケートより，来店者新規度，およびやみつき度による推薦結果は知名度が低く，万人受け度，および食べログ上の点数による推薦結果は知名度が高い傾向にあるといえる．料理のクオリティに関しては推薦基準によらず，同じような結果となった．コストパフォーマンスは，食べログの点数ランキングによる推薦だけが突出して高い評価を得ているが，これは，推薦結果が全てうどん店であり，全体的に価格帯が低いこと起因すると考えられる．また，もっとも行きたいと思う飲食店を推薦できたのは万人受け度であった．\par
+以上より，提案指標は食べログでは推薦されない飲食店を推薦できているが，穴場を推薦できているといえるのは来店者新規度とやみつき度の二つだけである．万人受け度が推薦する飲食店は，穴場ではないが，男子高専生がもっとも行きたいと思う飲食店であった．
+また，来店者新規度とやみつき度による推薦結果から上位3軒のみを比較すると，来店者新規度のほうが知名度が低い飲食店を推薦できていると言える．
