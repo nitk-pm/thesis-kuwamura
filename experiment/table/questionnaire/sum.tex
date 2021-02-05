@@ -1,11 +1,11 @@
-\begin{table}[H]
-\centering
+\begin{center}
+\begin{threeparttable}[H]
 \caption{アンケート結果の合計}
 \label{table:questionnaire:sum}
 \small
 \begin{tabular}{|c|c|r|r|}
 \hline
-項目 & 推薦方法 & 悪い\footnotemark[3] & 良い\footnotemark[4] \\ \hline
+項目 & 推薦方法 & 悪い\tnote{a} & 良い\tnote{b} \\ \hline
 \multirow{4}{*}{知名度} & 来店者新規度 & 67 & 13 \\ \cline{2-4}
  & やみつき度 & 60 & 20 \\ \cline{2-4}
  & 万人受け度 & 35 & 45 \\ \cline{2-4}
@@ -23,6 +23,9 @@
  & 万人受け度 & 20 & 60 \\ \cline{2-4}
  & 食べログ上の点数 & 28 & 52 \\ \hline
 \end{tabular}
-\end{table}
-\footnotetext[3]{低い/絶対に行きたくない，またはやや低い/あまり行きたくないと評価された数}
-\footnotetext[4]{やや高い/少し行ってみたい，または高い/かなり行ってみたいと評価された数}
+\begin{tablenotes}
+\item[a] 低い/絶対に行きたくない，またはやや低い/あまり行きたくないと評価された数
+\item[b] やや高い/少し行ってみたい，または高い/かなり行ってみたいと評価された数
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
