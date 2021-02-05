@@ -3,6 +3,7 @@ set -eux
 
 # build pdf (change if necessary)
 platex thesis.tex -synctex=1 -halt-on-error -file-line-error %O %S
+platex thesis.tex -synctex=1 -halt-on-error -file-line-error %O %S
 dvipdfmx thesis.dvi
 
 # create release
