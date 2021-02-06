@@ -1,0 +1,23 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{食べログ上の点数による推薦結果上位10軒}
+\label{table:scrutiny:rank}
+\small
+\begin{tabular}{|c|r|r|r|r|r|r|}
+\hline
+\multirow{2}{*}{店名} & \multicolumn{3}{c|}{提案指標} & \multicolumn{3}{c|}{食べログ上の指標} \\ \cline{2-7}
+ & \multicolumn{1}{c|}{来店者新規度} & \multicolumn{1}{c|}{やみつき度} & \multicolumn{1}{c|}{万人受け度} & \multicolumn{1}{c|}{点数} & \multicolumn{1}{c|}{口コミ数} & \multicolumn{1}{c|}{ブックマーク数} \\ \hline
+瀬戸晴れ & 0.750 & 0.290 & 0.500 & 3.94 & 77 & 3685 \\ \hline
+うどん 一福 & 0.882 & 0.140 & 0.235 & 3.91 & 493 & 26692 \\ \hline
+手打うどん 麦蔵 & 1.000 & 0.000 & 0.333 & 3.89 & 200 & 16172 \\ \hline
+手打ちうどん はりや & 1.000 & 0.000 & 0.143 & 3.87 & 178 & 8878 \\ \hline
+手打ちうどん 大蔵 & 1.000 & 0.000 & 0.500 & 3.85 & 51 & 2540 \\ \hline
+うどん本陣 山田家 讃岐本店 & 0.952 & 0.059 & 0.193 & 3.82 & 452 & 20482 \\ \hline
+ふる里うどん & なし & なし & なし & 3.81 & 40 & 1551 \\ \hline
+手打十段 うどんバカ一代 & 0.890 & 4.886 & 2.684 & 3.79 & 1034 & 38204 \\ \hline
+さか枝 & 0.909 & 0.109 & 0.182 & 3.79 & 540 & 20382 \\ \hline
+竹清 & 0.912 & 0.100 & 0.167 & 3.78 & 423 & 20455 \\ \hline
+\end{tabular}
+\end{table}

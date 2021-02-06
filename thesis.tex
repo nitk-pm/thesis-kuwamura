@@ -13,16 +13,22 @@
 %%%%% テンプレート選択 %%%%%
 \documentclass[honka]{nitkcthesis}%卒論（本科5年）日本語用
 
+\usepackage{here}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{threeparttable}
+
 %%%%% タイトル %%%%%
 \title{\underline{全ユーザの来店履歴を用いた}\\\underline{飲食店推薦指標の提案}}
 %\titlewidth{}% タイトル幅 (指定するときは単位つきで)
 
 %%%%% 著者 %%%%%
-\author{name}
-\eauthor{name}% Copyright表示で使われる
+\author{桑村 真生}
+\eauthor{Masaki Kuwamura}% Copyright表示で使われる
 
 %%%%% 指導教員名 %%%%%
-\supervisor{name}% 1つ引数をとる (役職まで含めて書く)
+\supervisor{柿元 健 准教授}% 1つ引数をとる (役職まで含めて書く)
 
 
 %%%%% 提出年月 %%%%%
@@ -40,19 +46,39 @@
 \frontmatter
 
 %%%%% English title %%%%%
-\etitle{proposal of metrics for restaurant recommendation using all users' visitation history}
+\etitle{Proposal of Metrics for Restaurant Recommendation Using All Users' Visitation History}
 
 %%%%% Abstract %%%%%
 \eabstract{
-English abstract goes here.
+Evaluations in restaurant review sites are referenced for searching places to dine.
+In conventional review sites, little-known restaurants have low rates. However, little-known restaurants can still be high-quality despite being newly opened or lacking  advertising.
+Therefore, we propose three metrics that indicate possibility that the restaurant is a hole-in-the-wall; ``Visitor Novelty,''  ``Addictivity,'' and ``Acceptability.''
+To evaluate the metrics, we have compiled Swarm-associated tweets posted from 2020/07/28 to 2020/12/24 and calculated the indices of metrics.
+Based on the indices, we have compared the top 10 restaurants of the metrics-based recommendations with the top 10 restaurants from a conventional review site through a questionnaire to 8 male students.
+Compared to the ranking of the conventional review site, our recommendations based on Visitor Novelty have had 18 more ratings for ``not well-known,'' 1 fewer rating for ``good cuisine quality,'' 7 more ratings for ``good deal,'' and 4 more ratings for ``would like to go.''
+Compared to the ranking of the conventional review site, our recommendations based on Addictivity have had 11 more ratings for ``not well-known,'' 1 fewer rating for ``good cuisine quality,'' 7 more ratings for ``good deal,'' and 4 more ratings for ``would like to go.''
+Compared to the ranking of the conventional review site, our recommendations based on Acceptability have had 14 fewer ratings for ``not well-known,'' 1 fewer rating for ``good cuisine quality,'' 22 more ratings for ``good deal,'' and 8 more ratings for ``would like to go.''
+According to the results, Visitor Novelty and Addictivity are more likely  to recommend hole-in-the-wall restaurants than the conventional review site.
+And it is thought that Visitor Novelty is the best metric to recommend hole-in-the-walls.
+%FIXME 数字はまだ妄想
 }
 
 %%%%% 概要 %%%%%
 \abstract{
-日本語の概要をここに記述．
+飲食店レビューサイト内の評価は飲食店を調べる際に頻繁に参考にされる．
+既存のレビューサイトでは，知名度が低い飲食店は評価が低い傾向にある．
+しかし，新規にオープンした飲食店や積極的に集客を行っていない飲食店など，知名度が低い飲食店の中にも良質な穴場店があると考えられる．
+そこで，本研究では，穴場店に対する推薦を実現するために，飲食店が穴場である可能性を表す推薦指標「来店者新規度」「やみつき度」「万人受け度」を提案する．
+各指標では飲食店に対する来店者数，延べ来店者数，および，各来店者ごとの来店回数をもとに飲食店の穴場である可能性を判断する．
+評価実験のために，2020年7月28日から2020年12月24日までの高松市におけるSwarm連携ツイートを収集し，得られた来店履歴を用いて高松市内の飲食店に対して指標値を計算した．
+計算した指標値をもとに，高松市内の飲食店について，提案する各指標に基づく推薦結果と，既存のレビューサイトの高松市におけるランキングのそれぞれ上位10軒の知名度と良質さを男子高専生8名に対するアンケートにより比較した．
+既存のレビューサイトの推薦結果と比較して，来店者新規度に基づく推薦に対しては，「知名度が低い」という評価が18件多く，「料理のクオリティが高い」という評価が1件少なく，「コストパフォーマンスが高い」という評価が7件多く，「行ってみたい」という評価が4件多かった．
+既存のレビューサイトの推薦結果と比較して，やみつき度に基づく推薦に対しては，「知名度が低い」という評価が11件多く，「料理のクオリティが高い」という評価が1件少なく，「コストパフォーマンスが高い」という評価が7件多く，「行ってみたい」という評価が4件多かった．
+既存のレビューサイトの推薦結果と比較して，万人受け度に基づく推薦に対しては，「知名度が低い」という評価が14件少なく，「料理のクオリティが高い/やや高い」という評価が1件少なく，「コストパフォーマンスが高い」という評価が22件多く，「かなり行ってみたい」という評価が8件多かった．
+したがって，来店者新規度とやみつき度は既存のレビューサイトよりも穴場を推薦できていると考えられる．また，提案する指標のうち，来店者新規度がもっともよく穴場飲食店を推薦できている．
 }
 
-\keywords{A, B, C}
+\keywords{Hole-in-the-wall, Restaurant recommendation, Visitation history}
 
 \makeseparatedabstract
 %\makeabstract
@@ -72,6 +98,16 @@ English abstract goes here.
 
 \input{intro/intro.tex}
 
+% \input{quality/quality.tex}
+
+\input{related/related.tex}
+
+\input{proposal/proposal.tex}
+
+\input{experiment/experiment.tex}
+
+\input{discussion/discussion.tex}
+
 \input{conclusion/conclusion.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 後付 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,12 +118,22 @@ English abstract goes here.
 
 %%%%% 参考文献 %%%%%
 \begin{thebibliography}{99}
-  \bibitem{one}
-  お
-  \bibitem{two}
-  こ
+  \addcontentsline{toc}{chapter}{\bibname}
+   \bibitem{Parameswaran}
+   Parameswaran, A. G., Koutrika, G., Bercovitz, B., and Garcia-Molina, H. 2010. Recsplorer: recommendation algorithms based on precedence mining. In Proceedings of SIGMOD’10. ACM, New York, NY, 87-98.
+   \bibitem{McNee}
+   McNee, S. M., Riedl, J., Konstan, J. A.: Being accurate is not enough: how accuracy metrics have hurt recommender systems, CHI Extended Abstracts, pp.1097-1101 (2006)
+   \bibitem{onomatopoeia}
+   加藤 亜由美, 深澤 佑介, 森 武俊,~「語幹と関連するオノマトペを用いた意外性の高い飲食店推薦」,~人工知能学会論文誌 30巻 1号 SP2-B (2015年) pp.216-228
+  \bibitem{repeat}
+  株式会社リクルートライフスタイル,~「飲食店リピート実態＆リピート要因調査」,~\url{https://www.recruit-lifestyle.co.jp/uploads/2019/10/RecruitLifestyle\_ggs\_20191002.pdf}\ (アクセス日:2020/2/1)
+  \bibitem{score}
+  株式会社カカクコム,~「点数・ランキングについて」,~\url{https://tabelog.com/help/score}\ (アクセス日:2020/2/1)
+   \bibitem{restaurant}
+   総務省,~「大分類M−飲食店，宿泊業 総説」,~\url{https://www.soumu.go.jp/main_content/000417306.pdf}\ (アクセス日:2020/2/2)
+   \bibitem{picture}
+   西脇 達也, 北山 大輔,~「写真共有サイトを用いた穴場スポットの抽出」,~DEIM Forum 2015 P4-5
 \end{thebibliography}
-
 
 %%%%% 発表文献一覧 %%%%%
 
