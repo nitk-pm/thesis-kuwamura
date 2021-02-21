@@ -63,7 +63,7 @@
 	\section{アンケート結果}
 	\ref{exp:questionnaire}に示した
 	%各指標の推薦結果上位10軒，および食べログの点数ランキング上位10軒に対しての
-	アンケートの結果を，表\ref{table:questionnaire:tendency}〜\ref{table:questionnaire:rank}にまとめた．表内の飲食店は推薦順位が高い順に並べている．また，各推薦方法，および，各項目に対し「低い/絶対に行きたくない」または「やや低い/あまり行きたくない」と評価された数と「やや高い/少し行ってみたい」または「高い/かなり行ってみたい」と評価された数を表\ref{table:questionnaire:sum}にまとめ，「高い/かなり行ってみたい」と評価された数をプロットしたヒストグラムを図\ref{fig:sum}に示す．
+	アンケートの結果を，表\ref{table:questionnaire:tendency}〜\ref{table:questionnaire:rank}にまとめた．表内の飲食店は推薦順位が高い順に並べている．また，各推薦方法，および，各項目に対し「低い/絶対に行きたくない」または「やや低い/あまり行きたくない」と評価された数と「やや高い/少し行ってみたい」または「高い/かなり行ってみたい」と評価された数を表\ref{table:questionnaire:sum}にまとめ，「やや高い/少し行ってみたい」または「高い/かなり行ってみたい」と評価された数をプロットしたヒストグラムを図\ref{fig:sum}に示す．
 	\input{./experiment/table/questionnaire/tendency.tex}
 	\input{./experiment/table/questionnaire/frequency.tex}
 	\input{./experiment/table/questionnaire/VN.tex}
@@ -74,7 +74,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\linewidth]{./figure/sum.pdf}
-		\caption{「高い/かなり行ってみたい」と評価された数\label{fig:sum}}
+		\caption{「やや高い/少し行ってみたい」または「高い/かなり行ってみたい」と評価された数\label{fig:sum}}
 	\end{figure}
 	\par
 	表\ref{table:questionnaire:tendency}から，今回のアンケート対象者のうち，半数が行ったことがない店に行きたいと考えており，穴場飲食店推薦サービスの需要があることがわかる．\par
@@ -91,4 +91,6 @@
 コストパフォーマンスは万人受け度による推薦だけが突出して高い評価を得ており，その他の推薦方法では同じような結果となった．%また，もっとも行きたいと思う飲食店を推薦できたのは万人受け度であった．\par
 \par
 よって，推薦結果の知名度，料理のクオリティ，および，良質さから，穴場を推薦できているといえるのは来店者新規度とやみつき度だけであり，もっとも穴場を推薦できているのは来店者新規度であり，万人受け度は穴場を推薦できていない．
+\par
+ただし，本実験のアンケート対象者は男子高専生のみであり，高松市民から無作為に選んだとはいえず，一般的な評価とずれが生じている可能性がある．
 %万人受け度が推薦する飲食店は，穴場ではないが，男子高専生が行きたいと思う飲食店であり，もっとも良質であると考えられる．
